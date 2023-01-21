@@ -36,7 +36,7 @@ instance Accept CSS where
 instance ToCss a => MimeRender CSS a where
     mimeRender _ = encodeUtf8 . render. toCss
 
--- | Conversion to Clay 'Css'.
+-- | Conversion to Clay `Css`.
 class ToCss a where
   toCss :: a -> Css
 
