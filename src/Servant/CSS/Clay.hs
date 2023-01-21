@@ -14,7 +14,7 @@
 -- >>> type Eg = Get '[CSS] a
 --
 -- Will then check that @a@ has a `ToCss` instance.
-module Clay.CSS.Servant
+module Servant.CSS.Clay
   ( CSS
   , ToCss
   , toCss
