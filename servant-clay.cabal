@@ -5,13 +5,13 @@ cabal-version: 1.12
 -- see: https://github.com/sol/hpack
 
 name:           servant-clay
-version:        0.1.0.0
-description:    Please see the README on GitHub at <https://github.com/githubuser/servant-clay#readme>
-homepage:       https://github.com/githubuser/servant-clay#readme
-bug-reports:    https://github.com/githubuser/servant-clay/issues
-author:         Author name here
-maintainer:     example@example.com
-copyright:      2023 Author name here
+version:        0.0.0.1
+description:    Please see the README on GitHub at <https://github.com/l-monnier/servant-clay#readme>
+homepage:       https://github.com/l-monnier/servant-clay#readme
+bug-reports:    https://github.com/l-monnier/servant-clay/issues
+author:         Leonard Monnier
+maintainer:     leonard.monnier@gmail.com
+copyright:      2023 Leonard Monnier
 license:        BSD3
 license-file:   LICENSE
 build-type:     Simple
@@ -21,18 +21,22 @@ extra-source-files:
 
 source-repository head
   type: git
-  location: https://github.com/githubuser/servant-clay
+  location: https://github.com/l-monnier/servant-clay
 
 library
   exposed-modules:
-      Lib
+      Clay.CSS.Servant
   other-modules:
       Paths_servant_clay
   hs-source-dirs:
       src
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
   build-depends:
-      base >=4.7 && <5
+      base >=4.9 && <5
+    , clay
+    , http-media
+    , servant
+    , text
   default-language: Haskell2010
 
 executable servant-clay-exe
@@ -43,8 +47,12 @@ executable servant-clay-exe
       app
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7 && <5
+      base >=4.9 && <5
+    , clay
+    , http-media
+    , servant
     , servant-clay
+    , text
   default-language: Haskell2010
 
 test-suite servant-clay-test
@@ -56,6 +64,10 @@ test-suite servant-clay-test
       test
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7 && <5
+      base >=4.9 && <5
+    , clay
+    , http-media
+    , servant
     , servant-clay
+    , text
   default-language: Haskell2010
