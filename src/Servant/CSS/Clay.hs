@@ -21,6 +21,7 @@ module Servant.CSS.Clay
 where
 
 import Clay (Css, render)
+import Data.Text.Lazy (Text)
 import Data.Text.Lazy.Encoding (encodeUtf8)
 import Network.HTTP.Media ((//), (/:))
 import Servant.API (Accept (..), MimeRender (..))
@@ -34,6 +35,9 @@ instance Accept CSS where
 
 instance ToCss a => MimeRender CSS a where
     mimeRender _ = encodeUtf8 . render. toCss
+
+instance MimeRender CSS Text where
+    mimeRender _ = encodeUtf8
 
 -- | Conversion to Clay `Css`.
 class ToCss a where
