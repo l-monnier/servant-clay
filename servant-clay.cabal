@@ -26,6 +26,7 @@ source-repository head
 library
   exposed-modules:
       Servant.CSS.Clay
+      Servant.CSS.Clay.TH
   other-modules:
       Paths_servant_clay
   hs-source-dirs:
@@ -33,9 +34,11 @@ library
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
   build-depends:
       base >=4.9 && <5
+    , bytestring
     , clay
     , http-media
     , servant
+    , template-haskell
     , text
   default-language: Haskell2010
 
@@ -48,10 +51,12 @@ executable servant-clay-exe
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.9 && <5
+    , bytestring
     , clay
     , http-media
     , servant
     , servant-clay
+    , template-haskell
     , text
   default-language: Haskell2010
 
@@ -65,9 +70,11 @@ test-suite servant-clay-test
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.9 && <5
+    , bytestring
     , clay
     , http-media
     , servant
     , servant-clay
+    , template-haskell
     , text
   default-language: Haskell2010
